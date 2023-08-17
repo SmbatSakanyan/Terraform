@@ -22,7 +22,7 @@ resource "aws_lb_target_group" "TG" {
   health_check {
     interval            = 70
     path                = "/login"
-    port                = 80
+    port                = 3000
     healthy_threshold   = 2
     unhealthy_threshold = 2
     timeout             = 60
