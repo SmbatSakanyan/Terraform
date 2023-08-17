@@ -1,5 +1,5 @@
 resource "aws_security_group" "week4_SG" {
-  name   = "week4_SG"
+  name   = var.SG
   vpc_id = aws_vpc.week4_VPC.id
 
   ingress {

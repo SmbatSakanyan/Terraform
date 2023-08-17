@@ -1,20 +1,20 @@
 resource "aws_vpc" "week4_VPC" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.VPC_cidr_block
   tags = {
-    Name = "week4_VPC"
+    Name = var.VPC
   }
 }
 
 resource "aws_subnet" "public_a" {
   vpc_id            = aws_vpc.week4_VPC.id
-  cidr_block        = "10.0.0.0/24"
+  cidr_block        = var.public_a_cidr_block
   availability_zone = "us-west-2a"
 
 }
 
 resource "aws_subnet" "public_b" {
   vpc_id            = aws_vpc.week4_VPC.id
-  cidr_block        = "10.0.1.0/24"
+  cidr_block        = var.public_b_cidr_block
   availability_zone = "us-west-2b"
 }
 
